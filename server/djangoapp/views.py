@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
+# from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from django.contrib.auth.models import User
-from django.contrib.auth import login, logout
-from django.contrib import messages
-from datetime import datetime
+from django.contrib.auth import login
+# from django.contrib import messages
+# from datetime import datetime
 from django.views.decorators.csrf import csrf_exempt
 import logging
 import json
@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 # Create your views here.
 
 # Create a `login_user` view to handle sign in request
+
 @csrf_exempt
 def login_user(request):
     data = json.loads(request.body)
