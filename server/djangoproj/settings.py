@@ -29,9 +29,8 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://aristotleini-8000
-    .theiadockernext-0-labs-prod-theiak8s-4-tor01
-    .proxy.cognitiveclass.ai'
+    'https://aristotleini-8000.theiadockernext-0-labs-prod-'
+       'theiak8s-4-tor01.proxy.cognitiveclass.ai'
 ]
 
 # REST Framework settings
