@@ -10,7 +10,7 @@ import json
 
 from .models import CarMake, CarModel
 from .populate import initiate
-# from .restapis import get_request, analyze_review_sentiments, post_review
+from .restapis import get_request, analyze_review_sentiments, post_review
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -26,7 +26,7 @@ def login_user(request):
     username = data['userName']
     password = data['password']
 
-    # user = authenticate(username=username, password=password)
+    user = authenticate(username=username, password=password)
     data = {"userName": username}
 
     if user is not None:
@@ -128,9 +128,9 @@ def get_dealer_details(request, dealer_id):
 
 def add_review(request):
     if not request.user.is_anonymous:
-        # data = json.loads(request.body)
+        data = json.loads(request.body)
         try:
-            # response = post_review(data)
+            response = post_review(data)
             return JsonResponse({"status": 200})
         except Exception as e:
             return JsonResponse({"status": 401,
