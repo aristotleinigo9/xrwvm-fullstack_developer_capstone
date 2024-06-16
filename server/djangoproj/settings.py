@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-lint_python: disable=everything
 
 import os
 from pathlib import Path
@@ -25,11 +24,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'https://aristotleini-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+    'https://aristotleini-8000
+    .theiadockernext-0-labs-prod-theiak8s-4-tor01
+    .proxy.cognitiveclass.ai'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://aristotleini-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+    'https://aristotleini-8000
+    .theiadockernext-0-labs-prod-theiak8s-4-tor01
+    .proxy.cognitiveclass.ai'
 ]
 
 # REST Framework settings
@@ -93,7 +96,8 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'django.contrib.auth.password_validation
+         .UserAttributeSimilarityValidator',
     },
     {
         'NAME':
