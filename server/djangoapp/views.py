@@ -10,7 +10,7 @@ import json
 
 from .models import CarMake, CarModel
 from .populate import initiate
-from .restapis import get_request, analyze_review_sentiments, post_review
+# from .restapis import get_request, analyze_review_sentiments, post_review
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -26,7 +26,7 @@ def login_user(request):
     username = data['userName']
     password = data['password']
 
-    user = authenticate(username=username, password=password)
+    # user = authenticate(username=username, password=password)
     data = {"userName": username}
 
     if user is not None:
@@ -37,11 +37,13 @@ def login_user(request):
 
 # Create a `logout_request` view to handle sign out request
 
+
 def logout_request(request):
     data = {"userName": ""}
     return JsonResponse(data)
 
 # Create a `registration` view to handle sign up request
+
 
 @csrf_exempt
 def registration(request):
@@ -70,6 +72,7 @@ def registration(request):
 
 # Create a `get_cars` view to retrieve car models and makes
 
+
 @csrf_exempt
 def get_cars(request):
     count = CarMake.objects.count()
@@ -77,8 +80,10 @@ def get_cars(request):
         initiate()
 
     car_models = CarModel.objects.select_related('car_make')
-    cars = [{"CarModel": car_model.name, "CarMake": car_model.car_make.name} for car_model in car_models]
-    
+    cars = [{"CarModel": car_model.name,
+             "CarMake": car_model.car_make.name}
+            for car_model in car_models]
+
     return JsonResponse({"CarModels": cars})
 
 
@@ -123,7 +128,7 @@ def get_dealer_details(request, dealer_id):
 
 def add_review(request):
     if not request.user.is_anonymous:
-        data = json.loads(request.body)
+        # data = json.loads(request.body)
         try:
             # response = post_review(data)
             return JsonResponse({"status": 200})
