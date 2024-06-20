@@ -22,9 +22,7 @@ SECRET_KEY = 'django-insecure-ccow$tz_=9%dxu4(0%^(z%nx32#s@(zt9$ih@)5l54yny)wm-0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost',
-                 'https://aristotleini-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'  # noqa: E501
-]
+ALLOWED_HOSTS = ['localhost','https://aristotleini-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'  # noqa: E501]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://aristotleini-8000.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'  # noqa: E501
